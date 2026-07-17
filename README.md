@@ -1,4 +1,4 @@
-# Monitoreo de Rendimiento: Connection Pooling con PostgreSQL y Python
+<img width="1279" height="759" alt="image" src="https://github.com/user-attachments/assets/5a69c817-89a4-40ca-8227-c2f2536268c1" /># Monitoreo de Rendimiento: Connection Pooling con PostgreSQL y Python
 
 ## Descripción
 
@@ -212,3 +212,9 @@ Tiempo con 10 hilos: 0.0832 segundos
 La implementación del **Connection Pooling** permite reutilizar conexiones abiertas hacia PostgreSQL, reduciendo significativamente el tiempo de respuesta y el consumo de recursos del servidor.
 
 Las pruebas realizadas muestran que el uso de un **Pool de Conexiones** mejora el rendimiento frente al uso de conexiones dedicadas, especialmente cuando existen múltiples solicitudes concurrentes.
+
+# Pregunta de reflexión
+## - ¿Qué pasaría si olvidamos poner la línea db_pool.putconn(conexion) dentro del bloque finally?
+Si omitimos el putconn en el bloque finally, las conexiones quedan "prestadas" o "huérfanas". Como la aplicación no devuelve la conexión al pool, esta sigue apareciendo como ocupada indefinidamente. Esto provoca que el pool se vacíe rápidamente hasta alcanzar su capacidad máxima. Una vez lleno, cualquier nueva solicitud de la aplicación se quedará esperando una conexión libre hasta que se agote el tiempo de espera, provocando un error de Timeout.
+
+
