@@ -1,3 +1,5 @@
+# Monitoreo de Rendimiento: Connection Pooling con PostgreSQL y Python
+
 ## Descripción
 
 Este proyecto tiene como objetivo comparar el rendimiento de las conexiones a una base de datos **PostgreSQL** utilizando dos enfoques diferentes:
