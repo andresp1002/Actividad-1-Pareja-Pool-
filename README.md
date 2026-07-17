@@ -110,9 +110,8 @@ El programa crea un conjunto de conexiones reutilizables utilizando:
 pool.SimpleConnectionPool(2, 10, **DB_CONFIG)
 ```
 El pool fue configurado con:
-
-Mínimo de conexiones disponibles: 2.
-Máximo de conexiones disponibles: 10.
+* Mínimo de conexiones disponibles: 2.
+* Máximo de conexiones disponibles: 10.
 
 Esto permite mantener conexiones listas para ser utilizadas y controlar la cantidad de conexiones simultáneas hacia PostgreSQL.
 
