@@ -213,5 +213,5 @@ La implementación del **Connection Pooling** permite reutilizar conexiones abie
 Las pruebas realizadas muestran que el uso de un **Pool de Conexiones** mejora el rendimiento frente al uso de conexiones dedicadas, especialmente cuando existen múltiples solicitudes concurrentes.
 
 # Pregunta de reflexión
-## - ¿Qué pasaría si olvidamos poner la línea db_pool.putconn(conexion) dentro del bloque finally?
+## ¿Qué pasaría si olvidamos poner la línea db_pool.putconn(conexion) dentro del bloque finally?
 Si omitimos el putconn en el bloque finally, las conexiones quedan "prestadas" o "huérfanas". Como la aplicación no devuelve la conexión al pool, esta sigue apareciendo como ocupada indefinidamente. Esto provoca que el pool se vacíe rápidamente hasta alcanzar su capacidad máxima. Una vez lleno, cualquier nueva solicitud de la aplicación se quedará esperando una conexión libre hasta que se agote el tiempo de espera, provocando un error de Timeout.
