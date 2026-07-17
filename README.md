@@ -1,5 +1,3 @@
-<img width="1279" height="759" alt="image" src="https://github.com/user-attachments/assets/5a69c817-89a4-40ca-8227-c2f2536268c1" /># Monitoreo de Rendimiento: Connection Pooling con PostgreSQL y Python
-
 ## Descripción
 
 Este proyecto tiene como objetivo comparar el rendimiento de las conexiones a una base de datos **PostgreSQL** utilizando dos enfoques diferentes:
